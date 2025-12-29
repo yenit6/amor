@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Um presente pra você ❤️</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* 🎁 Presente */
+    .gift {
+      font-size: 80px;
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    /* Conteúdo escondido */
+    .content {
+      display: none;
+      margin-top: 20px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .text {
+      color: #fff;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="gift" id="gift">🎁</div>
+
+    <div class="content" id="content">
+      <!-- 🔁 Troque "foto.jpg" pela foto de vocês -->
+      <img src="foto.jpg" alt="Nossa foto">
+
+      <!-- 💌 Texto da declaração -->
+      <div class="text">
+        Você é uma das melhores coisas que já aconteceram na minha vida.  
+        Obrigado por existir e fazer meus dias mais felizes ❤️
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const gift = document.getElementById("gift");
+    const content = document.getElementById("content");
+
+    gift.addEventListener("click", () => {
+      gift.style.display = "none";
+      content.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
